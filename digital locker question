@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <string.h>
+#define PASSWORD "aeiceg"
+int main() {
+    char matrix[3][3], diagonal[5];
+    int i, j, k = 0;
+    printf("Enter the 3x3 matrix:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf(" %c", &matrix[i][j]);
+        }
+    }
+    diagonal[k++] = matrix[0][0];
+    diagonal[k++] = matrix[1][1];
+    diagonal[k++] = matrix[2][2];
+    diagonal[k++] = matrix[0][2];
+    diagonal[k++] = matrix[2][0];
+    if (strcmp(diagonal, PASSWORD) == 0) {
+        printf("Password verified\n");
+    } else {
+        printf("Incorrect password\n");
+    }
+return 0;
+}
