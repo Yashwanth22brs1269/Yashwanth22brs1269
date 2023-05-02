@@ -1,0 +1,23 @@
+#include <stdio.h>
+void sum_series(int n, float *sum);
+int main() {
+    int n;
+    float sum = 0;
+    printf("Enter n:\n");
+    scanf("%d", &n);
+    sum_series(n, &sum);
+    printf("Sum of the series: %f\n", sum);
+    return 0;
+}
+void sum_series(int n, float *sum) {
+    if (n == 0) {
+        return; 
+    }
+    float term = 1;
+    int i;
+for (i = 1; i <= n; i++) {
+        term *= i;
+    }
+    *sum += term / n;
+    sum_series(n-1, sum);
+}
